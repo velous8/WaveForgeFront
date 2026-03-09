@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import "@fontsource/inter";
+import "@fontsource/manrope";
+import "@fontsource/ramabhadra";
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './components/header';
+import Main from './pages/main.page';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path='/' element = {<Main/>}/>
+        <Route path='/pack' element = {<p>pack</p>}/>
+        <Route path='/store' element = {<p>packList</p>}/>
+        
+        <Route path="*" element={<p>404</p>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

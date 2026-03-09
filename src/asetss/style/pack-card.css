@@ -1,0 +1,44 @@
+.card {
+
+    padding: 8px;
+}
+
+.image-price__card {
+    
+    position: relative;
+    
+}
+.image__card {
+    
+    border-radius: 6px;
+}
+.price__card {
+    font-weight: bold;
+    font-family: "Inter";
+    color: white;
+    background-color: #252323cc;
+    position: absolute;
+    padding:  3px 14px;
+    bottom: 4px;
+    right: 0;
+    border: 1px solid #ffffff26;
+    border-radius: 6px 0px;
+}
+
+.title__card {
+    color: white;
+    font-family: "Inter";
+    font-size: 15px;
+    margin: 10px 0;
+}
+.line__card {
+    border-top: 1px solid #ffffff26;
+     margin: 10px 0;
+}
+.date__card {
+    color: #AEAEAE;
+    font-family: "Inter";
+    font-size: 13px;
+   text-align: right;
+   margin-right: 5px;
+}

@@ -1,0 +1,40 @@
+.header {
+    position:fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 10;
+}
+.wraper__header {
+    margin: 0 194px;
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+.logoName {
+    padding-top: 8px;
+    font-weight: bold;
+    font-family: "Ramabhadra", sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+.nav {
+    margin-right: 132px;
+    text-align: center;
+    flex-grow: 1;
+    padding: auto;
+}
+.nav>* {
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    margin: 2.5em;
+    color: white;
+}
