@@ -1,0 +1,20 @@
+.player {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.player__button {
+    color: white;
+    height: 37px;
+    min-width: 37px;
+    border-radius: 100%;
+    border: 0;
+}
+
+.player__time {
+    color: white;
+    font-family: "Inter";
+    font-size: 10px;
+    min-width: fit-content;
+}

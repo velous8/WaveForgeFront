@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../asetss/style/carousel.css';
-import Card from './pack-card';
+import '../../asetss/style/carousel.css';
+import Card from './card';
 
 const Carousel = () => {
   const [isHovering, setIsHovering] = useState(false);

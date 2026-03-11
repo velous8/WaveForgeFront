@@ -1,0 +1,29 @@
+.preview {
+    padding: 6px 29px;
+    font-family: "Inter";
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image__preview {
+    width: 64px;
+    border-radius: 6px;
+}
+
+.dop-info__preview {
+    display: flex;
+    gap: 10px;
+}
+.name__preview {
+    color: white;
+    padding: 3px 0;
+}
+.dop-info__preview>* {
+    color: #AEAEAE;
+    background-color: #202B29;
+    padding: 3px 10px;
+    border-radius: 30px;
+}

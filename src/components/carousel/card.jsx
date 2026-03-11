@@ -1,5 +1,5 @@
-import image from '../asetss/packImage.png'
-import '../asetss/style/pack-card.css'
+import image from '../../asetss/packImage.png'
+import '../../asetss/style/pack-card.css'
 
 
 const Card = () => {

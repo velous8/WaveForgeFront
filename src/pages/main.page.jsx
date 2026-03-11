@@ -1,5 +1,6 @@
 import '../asetss/style/main.css'
-import Carousel from '../components/carousel'
+import Carousel from '../components/carousel/carousel'
+import PreviewList from '../components/previewList/previewList'
 
 const Main = () => {
     return (
@@ -16,8 +17,8 @@ const Main = () => {
                     <Carousel></Carousel>
                 </div>
                 <div className='info-pack'>
-                    <div className='preview-pack panel'>
-                        
+                    <div className='preview-pack'>
+                        <PreviewList/>
                     </div>
                 </div>
             </main>
