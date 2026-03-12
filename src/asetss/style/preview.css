@@ -9,7 +9,7 @@
 }
 
 .image__preview {
-    width: 64px;
+    width: 48px;
     border-radius: 6px;
 }
 
@@ -26,4 +26,25 @@
     background-color: #202B29;
     padding: 3px 10px;
     border-radius: 30px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.player__button {
+    color: white;
+    height: 37px;
+    min-width: 37px;
+    border-radius: 100%;
+    border: 0;
+}
+
+.player__time {
+    color: white;
+    font-family: "Inter";
+    font-size: 10px;
+    min-width: fit-content;
 }
