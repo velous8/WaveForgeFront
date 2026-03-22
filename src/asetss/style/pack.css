@@ -1,0 +1,97 @@
+.pack {
+    margin-top: 99px; 
+}
+
+.pack__info {
+    position: relative;
+    margin-bottom: 26px;
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+}
+.pack__name{
+    margin: 0;
+    font-family: "Inter";
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.pack__image{
+    width: 248px;
+     border-radius: 6px;
+}
+.pack__dop-imfo{
+    width: 451px;
+}
+.pack__count-and-style{
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+    font-family: "Inter";
+    color: white;
+    font-size: 11px;
+}
+.pack__description {
+    font-family: "Inter";
+    color: #AEAEAE;
+    font-size: 14px;    
+}
+
+.pack__buy {
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.pack__price {
+    font-family: "Inter";
+    color: white;
+    font-size: 14px; 
+}
+.pack__button-buy {
+    background-color: #1CE8AB;
+    height: fit-content;
+    border: 0px;
+    color: white;
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 6px;
+}
+.pack__button-buy:hover {
+    background-color: #2bf4b7;
+}
+.pack__button-buy:active {
+    background-color: #16ac7f;
+}
+
+.pack__license{
+    padding: 16px;
+    background: linear-gradient(#1ce8ab4d , #ffffff00 );
+    height: fit-content;
+    border-radius: 12px;
+    border: 1px solid #ffffff26;
+    width: 290px;
+    font-family: "Inter";
+    color: white;
+    
+}
+.license__title{
+        
+    font-weight: bolder;
+    font-size: 14px; 
+}
+.license__paragraphs{
+font-size: 11px; 
+}
+.license__paragraphs>li{
+    margin-bottom: 10px;
+}
+.license_link {
+    display: block;
+    text-align: end;
+        font-family: "Inter";
+    color: #AEAEAE;
+    font-size: 11px;  
+}

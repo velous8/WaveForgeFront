@@ -2,28 +2,22 @@ import { useState } from 'react';
 import '../../asetss/style/preview-list.css'
 import Preview from './preview'
 
-const PreviewList = () => {  
+const PreviewList = ({imageUrl, previews}) => {  
     const [currentTrack, setCurrentTrack] = useState(null)
-
-    const previews = [
-        { id: 1, link: 'https://d2wxqn8zvcy925.cloudfront.net/mp3/V3FAqvbrQtP7VHDjReH6e9lzQlpc7fpOWxeAJFHU246732WLfnJ.mp3', title: 'preview 1', type: 'drill', bpm: '130bpm', tonality: 'D minor' },
-        { id: 2, link: 'https://d2wxqn8zvcy925.cloudfront.net/mp3/V3FAqvbrQtP7VHDjReH6e9lzQlpc7fpOWxeAJFHU246732WLfnJ.mp3', title: 'preview 2', type: 'drill', bpm: '130bpm', tonality: 'D minor' },
-        { id: 3, link: 'https://d2wxqn8zvcy925.cloudfront.net/mp3/V3FAqvbrQtP7VHDjReH6e9lzQlpc7fpOWxeAJFHU246732WLfnJ.mp3', title: 'preview 3', type: 'drill', bpm: '130bpm', tonality: 'D minor' },
-        { id: 4, link: 'https://d2wxqn8zvcy925.cloudfront.net/mp3/V3FAqvbrQtP7VHDjReH6e9lzQlpc7fpOWxeAJFHU246732WLfnJ.mp3', title: 'preview 4', type: 'drill', bpm: '130bpm', tonality: 'D minor' },
-    ];
 
     
 
     return (
         <div className='preview-list panel'> 
-        <h2 className='title'>Featured Packs</h2>   
-         {previews.map((preview) => (
+        <h2 className='title'>Preview Pack</h2>   
+         {previews && previews.map((preview) => (
                 <Preview 
-                    link={preview.link}
+                    imageUrl={imageUrl}
+                    link={preview.file_key}
                     title={preview.title}
-                    type={preview.type}
+                    style={preview.style}
                     bpm={preview.bpm}
-                    tonality={preview.tonality}
+                    tonality={preview.key}
                     isPlaying={currentTrack === preview.id}
                     onPlay={() => {setCurrentTrack(preview.id)}}
                     offPlay={() => {setCurrentTrack(null)}}

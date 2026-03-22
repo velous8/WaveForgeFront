@@ -1,9 +1,9 @@
-import image from '../../asetss/packImage.png'
+
 import '../../asetss/style/preview.css'
 import { useState, useRef, useEffect } from 'react';
 import { AudioVisualizer } from 'react-audio-visualize';
 
-const Preview = ({link, title, type, bpm, tonality, isPlaying, onPlay, offPlay}) => {
+const Preview = ({imageUrl, link, title, style, bpm, tonality, isPlaying, onPlay, offPlay}) => {
     const [blob, setBlob] = useState(null);
     const [audioUrl, setAudioUrl] = useState(null);
     const [currentTime, setCurrentTime] = useState(0);
@@ -16,6 +16,7 @@ const Preview = ({link, title, type, bpm, tonality, isPlaying, onPlay, offPlay})
     useEffect(() => {
         const loadTestAudio = async () => {
             try {
+                offPlay()
                 const response = await fetch(link);
                 const audioBlob = await response.blob();
                 setBlob(audioBlob);
@@ -34,7 +35,7 @@ const Preview = ({link, title, type, bpm, tonality, isPlaying, onPlay, offPlay})
                 URL.revokeObjectURL(audioUrl);
             }
         };
-    }, []);
+    }, [link]);
     useEffect(() => {
         if (audioRef.current) {
             if (isPlaying) {
@@ -99,7 +100,7 @@ const Preview = ({link, title, type, bpm, tonality, isPlaying, onPlay, offPlay})
 
     return (
         <div className='preview'>        
-            <img className='image__preview' src={image} alt="imagePack" />
+            <img className='image__preview' src={imageUrl} alt="imagePack" />
             <div className='player'>
                 {/* Скрытый аудио элемент */}
                 {audioUrl && (
@@ -147,7 +148,7 @@ const Preview = ({link, title, type, bpm, tonality, isPlaying, onPlay, offPlay})
             <div className='info__preview'>
                 <div className='name__preview'>{title}</div>
                 <div className='dop-info__preview'>
-                    <div className='type__preview'>{type}</div>
+                    <div className='type__preview'>{style}</div>
                     <div className='bpm__preview'>{bpm}</div>
                     <div className='key__preview'>{tonality}</div>
                 </div>

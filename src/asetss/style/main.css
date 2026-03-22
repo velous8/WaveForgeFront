@@ -28,10 +28,21 @@
     text-align: center;
 }
 
-.title {
-    margin: 40px 221.1px 0;
+.title__featured-packs {
+    width: 1031px;
+    margin:  40px auto 0;
     font-family: "Inter";
     color: white;
     font-size: 20px;
     font-weight: bolder;
+}
+
+.pack__link {
+    width: 1000px;
+    margin: 0 auto;
+    display: block;
+    text-align: end;
+        font-family: "Inter";
+    color: #AEAEAE;
+    font-size: 14px;  
 }

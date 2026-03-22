@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header';
 import Main from './pages/main.page';
+import Pack from "./pages/pack.page";
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element = {<Main/>}/>
-        <Route path='/pack' element = {<p>pack</p>}/>
+        <Route path='/pack/:packId' element = {<Pack/>}/>
         <Route path='/store' element = {<p>packList</p>}/>
         
         <Route path="*" element={<p>404</p>} />

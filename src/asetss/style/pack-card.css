@@ -9,7 +9,7 @@
     
 }
 .image__card {
-    
+    max-height: 181px;
     border-radius: 6px;
 }
 .price__card {
@@ -26,6 +26,7 @@
 }
 
 .title__card {
+    text-align: left;
     color: white;
     font-family: "Inter";
     font-size: 15px;
