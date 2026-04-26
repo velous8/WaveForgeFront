@@ -18,7 +18,7 @@ const Pack = () => {
 
     useEffect(() => {
         setLoading(true);    
-        fetch(`http://localhost:3000/pack/${packId}`) 
+        fetch(`${process.env.REACT_APP_API_URL}pack/${packId}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Ошибка загрузки данных');
@@ -63,7 +63,7 @@ const Pack = () => {
     }
 
     const emailConfirm = async (email) => {
-        const response = await fetch("http://localhost:3000/auth/code-generate", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}auth/code-generate`, {
             method: "POST",
             body: JSON.stringify({
               email: email ,
@@ -75,24 +75,33 @@ const Pack = () => {
         })
         const data = await response.json();
         if(!data.send) {
-            alert(data.message)
+            alert('Ошибка при генерации кода. Возможно данный пак уже зарегестрирован на этот email.')  
         }
         await openOtpModal(data.send, email);    
     }
     const otpConfirm = async (code) => {
-        const response = await fetch("http://localhost:3000/buy", {
-        method: "POST",
-        body: JSON.stringify({
-          email: email,
-          packId: packId,
-          code: code//otpCode.join('')
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      const data = await response.json();
-      window.open(data.confirmation_url, '_blank', 'noopener,noreferrer');
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}buy`, {
+                method: "POST",
+                body: JSON.stringify({
+                  email: email,
+                  packId: packId,
+                  code: code
+                }),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                }
+            })
+            const data = await response.json();
+            if(!data.confirmation_url){
+                alert('Код неподтвержден')
+                throw new Error('Код неподтвержден')
+            }
+            window.open(data.confirmation_url, '_blank', 'noopener,noreferrer');
+        } catch (error) {
+            return error
+        }
+        
     }
 
     return (

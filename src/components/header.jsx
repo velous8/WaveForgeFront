@@ -26,7 +26,7 @@ const Header = () => {
     }
 
     const emailConfirm = async (email) => {
-        const response = await fetch("http://localhost:3000/auth/code-generate", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}auth/code-generate`, {
             method: "POST",
             body: JSON.stringify({
               email: email ,
@@ -43,7 +43,7 @@ const Header = () => {
         await openOtpModal(data.send, email);    
     }
     const otpConfirm = async (code) => {
-        const response = await fetch("http://localhost:3000/relink", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}relink`, {
         method: "POST",
         body: JSON.stringify({
           email: email,

@@ -24,7 +24,7 @@ const Carousel = ({chooseCard}) => {
   const cardWeight = 218.6;
 
   useEffect(() => {
-    fetch('http://localhost:3000/pack') 
+  fetch(`${process.env.REACT_APP_API_URL}pack`)
     .then(response => response.json()) 
     .then(data => {
       setCardData(data)
