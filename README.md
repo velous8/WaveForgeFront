@@ -1,4 +1,4 @@
-# Wave Forge — Frontend
+# Wave Forge Frontend
 
 ## Описание
 
